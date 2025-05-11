@@ -3,11 +3,11 @@ import { TrendingUp, ShieldCheck, Clock, Users, BookOpen, Zap } from 'lucide-rea
 
 const Benefits: React.FC = () => {
   return (
-    <section id="beneficios" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section id="beneficios" className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950 dark:to-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Beneficios para tu Equipo de Ventas</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Beneficios para tu Equipo de Ventas</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Nuestra plataforma transforma la forma en que entrenas y asistes a tu equipo comercial, generando resultados medibles desde el primer día.
           </p>
         </div>
@@ -86,29 +86,29 @@ const Benefits: React.FC = () => {
               </div>
             </div>
             
-            <div className="p-10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Lo que dicen nuestros clientes</h3>
+            <div className="p-10 dark:bg-gray-800">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Lo que dicen nuestros clientes</h3>
               
               <div className="space-y-6">
-                <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700">
+                <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700 dark:text-gray-300">
                   "Después de tres meses usando VentasPro AI, nuestro equipo de ventas aumentó sus conversiones en un 32%. El sistema de entrenamiento por niveles ha sido clave para mejorar las habilidades de respuesta a objeciones."
-                  <footer className="mt-2 text-gray-600 font-medium not-italic">
+                  <footer className="mt-2 text-gray-600 dark:text-gray-400 font-medium not-italic">
                     — Carlos Ruiz, Director de Ventas en TechSolutions
                   </footer>
                 </blockquote>
                 
-                <blockquote className="border-l-4 border-orange-500 pl-4 italic text-gray-700">
+                <blockquote className="border-l-4 border-orange-500 pl-4 italic text-gray-700 dark:text-gray-300">
                   "La asistencia en tiempo real nos ha permitido estandarizar las mejores prácticas en todo el equipo. Los nuevos vendedores alcanzan el nivel de los experimentados en la mitad del tiempo."
-                  <footer className="mt-2 text-gray-600 font-medium not-italic">
+                  <footer className="mt-2 text-gray-600 dark:text-gray-400 font-medium not-italic">
                     — María López, VP de Ventas en InnovaSoft
                   </footer>
                 </blockquote>
               </div>
               
               <div className="mt-8 flex space-x-2">
-                <span className="w-3 h-3 bg-blue-600 rounded-full"></span>
-                <span className="w-3 h-3 bg-blue-300 rounded-full"></span>
-                <span className="w-3 h-3 bg-blue-300 rounded-full"></span>
+                <span className="w-3 h-3 bg-blue-600 dark:bg-blue-500 rounded-full"></span>
+                <span className="w-3 h-3 bg-blue-300 dark:bg-blue-700 rounded-full"></span>
+                <span className="w-3 h-3 bg-blue-300 dark:bg-blue-700 rounded-full"></span>
               </div>
             </div>
           </div>
@@ -126,12 +126,12 @@ interface BenefitCardProps {
 
 const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-      <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+      <div className="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300">{description}</p>
     </div>
   );
 };

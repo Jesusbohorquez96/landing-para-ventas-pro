@@ -22,7 +22,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     className={`p-6 rounded-xl ${
       isHovered 
         ? `${color} text-white` 
-        : 'bg-white'
+        : 'bg-white dark:bg-gray-800'
     } shadow-lg hover:shadow-xl transition-all duration-300`}
     onMouseEnter={() => onHover(true)}
     onMouseLeave={() => onHover(false)}
@@ -30,14 +30,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
       isHovered 
         ? 'bg-white/20' 
-        : 'bg-purple-100'
+        : 'bg-purple-100 dark:bg-purple-900/30'
     }`}>
-      <div className={isHovered ? 'text-white' : 'text-purple-600'}>
+      <div className={isHovered ? 'text-white' : 'text-purple-600 dark:text-purple-400'}>
         {icon}
       </div>
     </div>
-    <h3 className="text-xl font-bold mb-3">{title}</h3>
-    <p className={isHovered ? 'text-white/90' : 'text-gray-600'}>
+    <h3 className="text-xl font-bold mb-3 dark:text-gray-200">{title}</h3>
+    <p className={isHovered ? 'text-white/90' : 'text-gray-600 dark:text-gray-400'}>
       {description}
     </p>
   </div>
@@ -86,16 +86,16 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-16 md:py-24 bg-gray-50">
+    <section id="features" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold bg-purple-100 text-purple-700 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-semibold bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full mb-4">
             Sistema de Entrenamiento
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-200 mb-4">
             Mejora tus Habilidades de Venta
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 dark:text-gray-300">
             Entrena y mejora tus habilidades con nuestro sistema gamificado de aprendizaje y seguimiento de progreso.
           </p>
         </div>

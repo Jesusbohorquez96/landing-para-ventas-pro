@@ -66,16 +66,16 @@ const pricingPlans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-gray-50">
+    <section id="pricing" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-100 text-blue-700 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full mb-4">
             Precios
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4">
             Elige el Plan Perfecto para tus Necesidades
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 dark:text-gray-300">
             Todos los planes incluyen una prueba gratuita de 14 días. No se requiere tarjeta de crédito para comenzar.
           </p>
         </div>
@@ -86,8 +86,8 @@ const Pricing: React.FC = () => {
               key={plan.id} 
               className={`rounded-xl overflow-hidden transition-all duration-300 ${
                 plan.popular 
-                  ? 'shadow-2xl ring-2 ring-purple-500 scale-105 bg-white z-10' 
-                  : 'shadow-lg hover:shadow-xl bg-white'
+                  ? 'shadow-2xl ring-2 ring-purple-500 scale-105 bg-white dark:bg-gray-800 z-10' 
+                  : 'shadow-lg hover:shadow-xl bg-white dark:bg-gray-800'
               }`}
             >
               {plan.popular && (
@@ -97,21 +97,21 @@ const Pricing: React.FC = () => {
               )}
               
               <div className="p-6 md:p-8">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{plan.name}</h3>
+                <h3 className="text-xl font-bold text-blue-900 dark:text-blue-200 mb-2">{plan.name}</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-4xl font-bold text-gray-900 dark:text-gray-100">{plan.price}</span>
                 </div>
-                <p className="text-gray-700 mb-6">{plan.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-6">{plan.description}</p>
                 
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       {feature.included ? (
-                        <Check size={18} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <Check size={18} className="text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
                       ) : (
-                        <X size={18} className="text-gray-400 mt-0.5 mr-2 flex-shrink-0" />
+                        <X size={18} className="text-gray-400 dark:text-gray-600 mt-0.5 mr-2 flex-shrink-0" />
                       )}
-                      <span className={feature.included ? 'text-gray-800' : 'text-gray-500'}>
+                      <span className={feature.included ? 'text-gray-800 dark:text-gray-200' : 'text-gray-500 dark:text-gray-400'}>
                         {feature.text}
                       </span>
                     </li>
@@ -130,7 +130,7 @@ const Pricing: React.FC = () => {
         </div>
         
         <div className="mt-12 text-center max-w-3xl mx-auto">
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
             ¿Necesitas una solución personalizada para tu empresa?
           </p>
           <Button variant="secondary">Contacta con nuestro Equipo de Ventas</Button>

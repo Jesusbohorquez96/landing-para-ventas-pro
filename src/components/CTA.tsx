@@ -25,7 +25,7 @@ const CTA: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-blue-900 text-white">
+    <section className="py-16 md:py-24 bg-blue-900 dark:bg-blue-950 text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -41,14 +41,14 @@ const CTA: React.FC = () => {
                 <Button 
                   variant="primary" 
                   size="lg" 
-                  className="bg-orange-500 hover:bg-orange-600"
+                  className="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700"
                 >
                   Comenzar Gratis
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-white text-white hover:bg-blue-800"
+                  className="border-white text-white hover:bg-blue-800 dark:hover:bg-blue-900"
                 >
                   Ver Demo
                   <ArrowUpRight size={16} className="ml-2" />
@@ -56,7 +56,7 @@ const CTA: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-blue-800 p-6 rounded-xl">
+            <div className="bg-blue-800 dark:bg-blue-900 p-6 rounded-xl">
               <div className="flex items-center mb-6">
                 <MessageSquare size={24} className="text-orange-500 mr-3" />
                 <h3 className="text-xl font-semibold">Agenda una Demo Gratis</h3>

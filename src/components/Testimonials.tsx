@@ -47,16 +47,16 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-gray-50">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-gray-50 dark:from-blue-950 dark:to-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold bg-orange-100 text-orange-700 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-semibold bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 rounded-full mb-4">
             Casos de Éxito
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4">
             Lo que Dicen Nuestros Usuarios
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 dark:text-gray-300">
             Descubre cómo VentasPro AI ha transformado equipos de ventas y vendedores individuales.
           </p>
         </div>
@@ -65,10 +65,10 @@ const Testimonials: React.FC = () => {
           {testimonials.map((testimonial) => (
             <div 
               key={testimonial.id} 
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="p-6 relative">
-                <Quote className="absolute top-6 right-6 text-gray-200" size={40} />
+                <Quote className="absolute top-6 right-6 text-gray-200 dark:text-gray-700" size={40} />
                 
                 <div className="flex space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -76,7 +76,7 @@ const Testimonials: React.FC = () => {
                   ))}
                 </div>
                 
-                <blockquote className="text-gray-700 mb-6 relative z-10">
+                <blockquote className="text-gray-700 dark:text-gray-300 mb-6 relative z-10">
                   "{testimonial.quote}"
                 </blockquote>
                 
@@ -87,13 +87,13 @@ const Testimonials: React.FC = () => {
                     className="w-12 h-12 rounded-full object-cover mr-4" 
                   />
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}, {testimonial.company}</p>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-blue-900 p-4">
+              <div className="bg-blue-900 dark:bg-blue-800 p-4">
                 <div className="text-center text-white">
                   <span className="text-sm font-medium">Resultado: </span>
                   <span className="font-bold">{testimonial.result}</span>

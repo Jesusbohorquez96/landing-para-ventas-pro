@@ -75,16 +75,16 @@ const LevelProgression: React.FC = () => {
   const [activeLevel, setActiveLevel] = useState<number>(1);
   
   return (
-    <section id="levels" className="py-16 md:py-24 bg-white">
+    <section id="levels" className="py-16 md:py-24 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-100 text-blue-700 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full mb-4">
             Mejora tus Habilidades
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4">
             Domina las Ventas con Niveles Progresivos
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 dark:text-gray-300">
             Nuestro modo de entrenamiento se adapta a tu nivel, proporcionando escenarios
             cada vez más desafiantes que construyen tu confianza y competencia.
           </p>
@@ -99,7 +99,7 @@ const LevelProgression: React.FC = () => {
                   className={`w-full text-left p-4 rounded-lg transition-all duration-300 flex items-center ${
                     activeLevel === level.id
                       ? `${level.color.replace('100', '600')} text-white shadow-lg`
-                      : `bg-gray-100 text-gray-700 ${level.hoverColor} hover:text-white`
+                      : `bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 ${level.hoverColor} hover:text-white`
                   }`}
                   onClick={() => setActiveLevel(level.id)}
                 >
@@ -125,31 +125,31 @@ const LevelProgression: React.FC = () => {
             </div>
           </div>
           
-          <div className="lg:w-2/3 bg-gray-50 rounded-2xl p-6 md:p-8 shadow-lg">
+          <div className="lg:w-2/3 bg-gray-50 dark:bg-gray-700 rounded-2xl p-6 md:p-8 shadow-lg">
             {levels.map((level) => (
               <div key={level.id} className={activeLevel === level.id ? 'block' : 'hidden'}>
                 <div className="flex items-center mb-6">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mr-4 ${level.color} ${level.textColor}`}>
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mr-4 ${level.color} ${level.textColor} dark:bg-opacity-30`}>
                     {level.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-blue-900">{level.title}</h3>
-                    <span className={`text-sm px-2 py-0.5 rounded-full ${level.color} ${level.textColor}`}>
+                    <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200">{level.title}</h3>
+                    <span className={`text-sm px-2 py-0.5 rounded-full ${level.color} ${level.textColor} dark:bg-opacity-40 dark:text-opacity-90`}>
                       {level.difficulty}
                     </span>
                   </div>
                 </div>
                 
-                <p className="text-gray-700 mb-8">
+                <p className="text-gray-700 dark:text-gray-300 mb-8">
                   {level.description}
                 </p>
                 
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-blue-900 mb-3">Habilidades que Dominarás</h4>
+                  <h4 className="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-3">Habilidades que Dominarás</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {level.skills.map((skill, index) => (
-                      <div key={index} className="flex items-center bg-white p-3 rounded-lg shadow-sm">
-                        <Trophy size={16} className={level.textColor + " mr-2"} />
+                      <div key={index} className="flex items-center bg-white dark:bg-gray-800 p-3 rounded-lg shadow-sm dark:text-gray-200">
+                        <Trophy size={16} className={level.textColor + " dark:text-blue-400 mr-2"} />
                         <span>{skill}</span>
                       </div>
                     ))}
@@ -157,19 +157,19 @@ const LevelProgression: React.FC = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-blue-900 mb-3">Escenario de Ejemplo</h4>
-                  <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                  <h4 className="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-3">Escenario de Ejemplo</h4>
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
                     <div className="flex items-start space-x-3 mb-4">
-                      <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mt-1">
-                        <Users size={16} className="text-blue-600" />
+                      <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mt-1">
+                        <Users size={16} className="text-blue-600 dark:text-blue-400" />
                       </div>
                       <div>
-                        <span className="text-sm text-gray-500 block">Cliente Simulado:</span>
-                        <p className="text-gray-700">{getScenarioForLevel(level.id)}</p>
+                        <span className="text-sm text-gray-500 dark:text-gray-400 block">Cliente Simulado:</span>
+                        <p className="text-gray-700 dark:text-gray-300">{getScenarioForLevel(level.id)}</p>
                       </div>
                     </div>
                     <div className="flex space-x-3 mb-2">
-                      <button className="flex items-center space-x-1 text-sm text-gray-500">
+                      <button className="flex items-center space-x-1 text-sm text-gray-500 dark:text-gray-400">
                         <span>¿Cómo responderías?</span>
                       </button>
                     </div>
